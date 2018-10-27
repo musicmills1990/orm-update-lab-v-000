@@ -1,4 +1,4 @@
-require_relative "../config/environment.rb"
+#require_relative "../config/environment.rb"
 
 class Student
 attr_accessor :name, :grade
@@ -42,7 +42,8 @@ def save
 end
 
 def self.create(name, grade)
-  student = Student.new(name, grade)
+  st
+  .roudent = Student.new(name, grade)
   student.save
   student
 end
@@ -61,7 +62,7 @@ def self.find_by_name(name)
     WHERE name = ?
     LIMIT 1
     SQL
-
+    
     DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
     end.first
